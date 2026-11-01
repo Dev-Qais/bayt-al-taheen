@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap");
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-primary);
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-primary) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@import "tailwindcss";
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f5f0;
+  --text-primary: #2d1e18;
+  --text-secondary: #6e5d55;
+  --accent: #b97a57;
+  --accent-hover: #9c6242;
+  --border-color: #e6dfd9;
+}
+
+.dark {
+  --bg-primary: #120d0b;
+  --bg-secondary: #1a1412;
+  --text-primary: #f5f0eb;
+  --text-secondary: #c7bbb3;
+  --accent: #d49673;
+  --accent-hover: #b97a57;
+  --border-color: #2d2320;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@layer utilities {
+  .container-custom {
+    width: 100%;
+    max-width: 1480px;
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
+
+  @media (min-width: 768px) {
+    .container-custom {
+      padding-inline: 24px;
+    }
+  }
+}
