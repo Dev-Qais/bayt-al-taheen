@@ -98,7 +98,7 @@ function ProductsShowcase() {
                   : `${filteredProducts.length} منتجات`}
             </span>
             <Link to="/cart" className="text-lg text-[var(--accent)] hover:underline">
-              عرض سلة المشتريات
+               سلة المشتريات
             </Link>
           </div>
         </div>
