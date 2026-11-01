@@ -4,7 +4,7 @@ import Button from "../../components/ui/Button";
 import FormError from "../../components/ui/FormError";
 import { getCurrentUser, loginUser } from "../../services/authService";
 import useAuthStore from "../../store/authStore";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -108,6 +108,12 @@ function Login() {
           >
             {isLoading ? "جاري تسجيل الدخول..." : "تسجيل الدخول"}
           </Button>
+          <p className="text-center text-sm text-[var(--text-secondary)]">
+            لا تملك حساباً؟{" "}
+            <Link to="/register" className="font-semibold text-[var(--accent)]">
+              انشئ حساباً
+            </Link>
+          </p>
         </form>
       </div>
     </section>
