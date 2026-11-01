@@ -4,7 +4,7 @@ import Button from "../../ui/Button";
 import ProductCard from "./ProductCard";
 import EmptyState from "../../feedback/EmptyState";
 import { useCategories } from "../../../hooks/useCategories";
-import { Link } from "react-router-dom";
+import { ShoppingBag } from "lucide-react";
 
 function ProductsShowcase() {
   const { data, isLoading, isError } = useProducts();
@@ -85,7 +85,7 @@ function ProductsShowcase() {
             اختيارات طازجة تُحضّر بعناية، لترافق أجمل لحظاتكم.
           </p>
         </div>
-        <div className="categories flex flex-wrap gap-3 mb-10">
+        <div className="categories flex flex-wrap gap-3 my-10 ">
           <div className="categories-list w-full flex flex-wrap justify-between items-center gap-3">
             <div className="flex flex-wrap max-sm:justify-center max-sm:gap-6 items-center gap-3">
               {categoryButtons}
@@ -97,9 +97,6 @@ function ProductsShowcase() {
                   ? "منتجان"
                   : `${filteredProducts.length} منتجات`}
             </span>
-            <Link to="/cart" className="text-lg text-[var(--accent)] hover:underline">
-               سلة المشتريات
-            </Link>
           </div>
         </div>
         {filteredProducts.length === 0 ? (
@@ -117,6 +114,12 @@ function ProductsShowcase() {
           )}
 
           {!showAll && <Button to="/menu">عرض القائمة</Button>}
+          <Button
+            to="/cart"
+            className="text-lg text-[var(--accent)] text-center flex items-center justify-center gap-2"
+          >
+            سلة المشتريات <ShoppingBag className="ml-2" size={20} />
+          </Button>
         </div>
       </div>
     </section>
