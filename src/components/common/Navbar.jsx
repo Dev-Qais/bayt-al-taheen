@@ -50,9 +50,7 @@ function Navbar() {
                 try {
                   await logoutUser();
                   logout();
-                } catch (error) {
-                  console.error(error);
-                }
+                } catch (error) {}
               }}
             >
               تسجيل الخروج
@@ -89,6 +87,28 @@ function Navbar() {
               className="absolute left-0 right-0 top-full mx-auto z-50 border-t border-[var(--border-color)] bg-[var(--bg-primary)] px-6 py-6 shadow-lg lg:hidden"
             >
               <ul className="flex  flex-col gap-5 text-right">
+                {isAuthenticated ? (
+                  <Button
+                    size="sm"
+                    className=" lg:inline-flex text-center flex items-center justify-center py-3 font-bold max-sm:text-[24px]"
+                    onClick={async () => {
+                      try {
+                        await logoutUser();
+                        logout();
+                      } catch (error) {}
+                    }}
+                  >
+                    تسجيل الخروج
+                  </Button>
+                ) : (
+                  <Button
+                    to="/login"
+                    size="sm"
+                    className="text-center flex items-center justify-center py-3 font-bold max-sm:text-[24px]"
+                  >
+                    تسجيل الدخول
+                  </Button>
+                )}
                 {navigation.map((item) => (
                   <li key={item.path}>
                     <NavLink

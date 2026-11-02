@@ -56,7 +56,7 @@ function CartSummary({ showButton = true }) {
             </Button>
             )}
             {!isAuthenticated && (
-            <Button size="lg" className="w-full" onClick={() => {}}>
+            <Button size="lg" className="w-full" to="/login" onClick={() => {}}>
               تسجيل الدخول للطلب
             </Button>
             )}
